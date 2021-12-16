@@ -21,4 +21,5 @@
         state: latest
   
     - name: run makefile
-      community.general.make: /git/Packer/golang-myip/Makefile
+      community.general.make: 
+	chdir: /git/Packer/golang-myip/Makefile
