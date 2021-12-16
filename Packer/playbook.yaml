@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install package GIT
+      package:
+        name: git
+        state: latest
+ 
+    - name: récupération du dépot Golang-myip
+      git:
+       repo: https://github.com/BastienBalaud/golang-myip.git
+       dest: /golang-myip
+       clone: yes
+       update: yes
+
+
+    - name: Install make command
+      package:
+        name: make
+        state: latest
+  
